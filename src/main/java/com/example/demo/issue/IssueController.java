@@ -6,10 +6,7 @@ import com.example.demo.comment.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.SimpleDateFormat;
@@ -51,6 +48,7 @@ public class IssueController {
         return "redirect:/issues";
     }
 
+
     @GetMapping("/issues/{issueId}")
     public String showIssue(@PathVariable("issueId") Long issueId, Model model) {
         Issue issue = this.issueService.findById(issueId);
@@ -61,8 +59,17 @@ public class IssueController {
         return "issue_details";
     }
 
-    @PatchMapping("/issues/{issueId}")
-    public String updateStatus(@PathVariable("id") Long id, Issue issue) {
+//    @PutMapping("/issues/{issueId}")
+//    public String updatePerson(@PathVariable("issueId") Long id,
+//                               @ModelAttribute Issue issueUpdated) {
+//        Issue issueCurrent = issueService.findById(id);
+//        issueCurrent.setStatus(issueUpdated.getStatus());
+//        issueService.save(issueCurrent);
+//        return "redirect:/issues";
+//    }
+
+    @PostMapping("/issues/{issueId}")
+    public String updateStatus(@PathVariable("issueId") Long id, @ModelAttribute Issue issue) {
         issueService.updateIssue(id, issue);
         return "redirect:/issues";
     }

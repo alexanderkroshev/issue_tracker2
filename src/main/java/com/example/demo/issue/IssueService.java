@@ -27,9 +27,12 @@ public class IssueService {
         return repository.findById(id).get();
     }
 
+
+
     public void updateIssue( Long id, Issue issue) {
         Issue issue1 = repository.findById(id).get();
         issue1.setStatus(issue.getStatus());
+        repository.save(issue1);
     }
 
 }

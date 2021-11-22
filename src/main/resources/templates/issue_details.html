@@ -26,7 +26,7 @@
 </table>
 <br/>
 <br/>
-<form action="#" th:action="@{/issues/{id}(id=${issue.id})}" th:object="${issue}" th:method="PATCH">
+<form action="#" th:action="@{/issues/{id}(id=${issue.id})}" th:object="${issue}" th:method="PUT">
     <div class="form-group">
         <label th:for="status">Status</label>
         <select th:field="*{status}">
@@ -35,11 +35,22 @@
                     th:value="${status}"></option>
         </select>
     </div>
+
+<!--    <form action="#" th:action="@{/issue_details}" th:object="${issue}" method="post">-->
+<!--        <label for="author">author</label>-->
+<!--        <input type="text" th:field="*{author}" id="author" placeholder="author">-->
+<!--        <br/>-->
+<!--        <label for="text">description</label>-->
+<!--        <br/>-->
+<!--        <input type="text" th:field="*{text}" id="text" placeholder="description">-->
+<!--        <br/>-->
+
     <input type="submit" value="change status" />
 </form>
 
 
 <h2>Comments:</h2>
+
 
 <!--<table id="issue" class="table table-striped">-->
 <!--    <style>-->
