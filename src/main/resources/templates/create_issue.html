@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Create issue</title>
+</head>
+<body>
+<h2>Create Issue</h2>
+<form action="#" th:action="@{/create_issue}" th:object="${issue}" method="post">
+  <label for="name">name</label>
+  <input type="text" th:field="*{name}" id="name" placeholder="name">
+  <br/>
+  <label for="author">author</label>
+  <input type="text" th:field="*{author}" id="author" placeholder="author">
+  <br/>
+  <label for="description">description</label>
+  <br/>
+  <input type="text" th:field="*{description}" id="description" placeholder="description">
+  <br/>
+  <input type="submit" value="Save">
+  <a href="http://localhost:8080/issues"> Cancel </a>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<body>
+<h2>Issue Tracker</h2>
+
+<table id="issue" class="table table-striped">
+    <style>
+    table {
+        border-collapse: separate;
+        border-spacing: 20px 5px;
+    }
+    </style>
+    <tbody>
+    <tr th:each="issue : ${issues}">
+        <td>
+            <a th:href="@{/issues/__${issue.id}__}" th:text="${issue.name}"/></a>
+        </td>
+        <td th:text="${issue.status.name}"/>
+        <td th:text="${issue.date}"/>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

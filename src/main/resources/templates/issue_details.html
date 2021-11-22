@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!--<html xmlns:th="https://www.thymeleaf.org"-->
+<!--      th:replace="~{fragments/layout :: layout (~{::body},'owners')}">-->
+
+<body xmlns="http://www.w3.org/1999/html">
+
+
+<table class="table table-striped" th:object="${issue}">
+    <tr>
+        <th>Status</th>
+        <td><b th:text="*{status.name}"></b></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td th:text="*{date}"></td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td th:text="*{author}"></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td th:text="*{description}"></td>
+    </tr>
+</table>
+<br/>
+<br/>
+<form action="#" th:action="@{/issues/{id}(id=${issue.id})}" th:object="${issue}" th:method="PATCH">
+    <div class="form-group">
+        <label th:for="status">Status</label>
+        <select th:field="*{status}">
+            <option th:each="status : ${statuses}"
+                    th:text="${status.name}"
+                    th:value="${status}"></option>
+        </select>
+    </div>
+    <input type="submit" value="change status" />
+</form>
+
+
+<h2>Comments:</h2>
+
+<!--<table id="issue" class="table table-striped">-->
+<!--    <style>-->
+<!--        table {-->
+<!--            border-collapse: separate;-->
+<!--            border-spacing: 20px 5px;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <tbody>-->
+<!--    <tr th:each="comment : ${comments}">-->
+<!--        <td th:text="${comment.author}"/>-->
+<!--        <td th:text="${comment.text}"/>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+
+<!--<table class="table table-striped">-->
+
+<!--    <tr th:each="comment : ${issue.comments}">-->
+<!--        <td valign="top">-->
+<!--            <dl class="dl-horizontal">-->
+<!--                <dt>author</dt>-->
+<!--                <dd th:text="${comment.author}"></dd>-->
+<!--                <dd th:text="${comment.text}"></dd>-->
+<!--            </dl>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+</body>
+</html>
+

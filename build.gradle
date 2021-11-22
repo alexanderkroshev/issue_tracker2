@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.projectlombok:lombok:1.18.18'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+	implementation group: 'org.thymeleaf', name: 'thymeleaf-spring5'
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api'
+	implementation group: 'org.springframework', name: 'spring-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation group: 'javax.cache', name: 'cache-api'
+	implementation group: 'org.postgresql', name: 'postgresql'
+	implementation group: 'org.hibernate.validator', name: 'hibernate-validator'
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
+	testImplementation group: 'cz.encircled', name: 'joiner-test-support', version: '0.4.1'
+	testImplementation group: 'org.springframework', name: 'spring-test'
+	implementation group: 'org.checkerframework', name: 'checker-qual', version: '3.18.1'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.5'
+	implementation group: 'org.springframework.data', name: 'spring-data-rest-webmvc', version: '3.5.5'
+}
+
+test {
+	useJUnitPlatform()
+}
