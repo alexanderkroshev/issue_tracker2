@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 
-<!--<html xmlns:th="https://www.thymeleaf.org"-->
-<!--      th:replace="~{fragments/layout :: layout (~{::body},'owners')}">-->
-
 <body xmlns="http://www.w3.org/1999/html">
-
 
 <table class="table table-striped" th:object="${issue}">
     <tr>
@@ -36,47 +32,26 @@
         </select>
     </div>
 
-<!--    <label for="author">author</label>-->
-<!--    <input type="text" th:field="*{comment.author}" id="author" placeholder="author">-->
-<!--    <br/>-->
-<!--    <label for="author">author</label>-->
-<!--    <input type="text" th:field="*{author}" id="author" placeholder="author">-->
 
     <input type="submit" value="change status" />
 </form>
 
-
 <h2>Comments:</h2>
+<table id="issue" class="table table-striped">
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 20px 5px;
+        }
+    </style>
+    <tbody>
+    <tr th:each="comment : ${comments}">
+        <td th:text="${comment.author}"/>
+        <td th:text="${comment.text}"/>
+    </tr>
+    </tbody>
+</table>
 
-
-<!--<table id="issue" class="table table-striped">-->
-<!--    <style>-->
-<!--        table {-->
-<!--            border-collapse: separate;-->
-<!--            border-spacing: 20px 5px;-->
-<!--        }-->
-<!--    </style>-->
-<!--    <tbody>-->
-<!--    <tr th:each="comment : ${comments}">-->
-<!--        <td th:text="${comment.author}"/>-->
-<!--        <td th:text="${comment.text}"/>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
-
-
-<!--<table class="table table-striped">-->
-
-<!--    <tr th:each="comment : ${issue.comments}">-->
-<!--        <td valign="top">-->
-<!--            <dl class="dl-horizontal">-->
-<!--                <dt>author</dt>-->
-<!--                <dd th:text="${comment.author}"></dd>-->
-<!--                <dd th:text="${comment.text}"></dd>-->
-<!--            </dl>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--</table>-->
 </body>
-</html>
+
 

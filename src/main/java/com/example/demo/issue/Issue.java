@@ -1,13 +1,9 @@
 package com.example.demo.issue;
 
-
 import com.example.demo.comment.Comment;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -24,9 +20,7 @@ public class Issue {
 
     private String description;
 
-
-      private Status status;
-
+    private Status status;
 
     private String date;
 

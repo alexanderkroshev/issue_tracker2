@@ -48,7 +48,6 @@ public class IssueController {
         return "redirect:/issues";
     }
 
-
     @GetMapping("/issues/{issueId}")
     public String showIssue(@PathVariable("issueId") Long issueId, Model model) {
         Issue issue = this.issueService.findById(issueId);
@@ -58,15 +57,6 @@ public class IssueController {
         model.addAttribute("statuses", Status.values());
         return "issue_details";
     }
-
-//    @PutMapping("/issues/{issueId}")
-//    public String updatePerson(@PathVariable("issueId") Long id,
-//                               @ModelAttribute Issue issueUpdated) {
-//        Issue issueCurrent = issueService.findById(id);
-//        issueCurrent.setStatus(issueUpdated.getStatus());
-//        issueService.save(issueCurrent);
-//        return "redirect:/issues";
-//    }
 
     @PostMapping("/issues/{issueId}")
     public String updateStatus(@PathVariable("issueId") Long id, @ModelAttribute Issue issue) {

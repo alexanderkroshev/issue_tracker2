@@ -43,6 +43,10 @@ dependencies {
 	implementation group: 'org.checkerframework', name: 'checker-qual', version: '3.18.1'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.5'
 	implementation group: 'org.springframework.data', name: 'spring-data-rest-webmvc', version: '3.5.5'
+
+	testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+	implementation 'com.h2database:h2:1.4.200'
+
 }
 
 test {
