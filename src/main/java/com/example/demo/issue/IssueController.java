@@ -3,15 +3,11 @@ package com.example.demo.issue;
 
 import com.example.demo.comment.Comment;
 import com.example.demo.comment.CommentService;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -73,34 +69,5 @@ public class IssueController {
         issueService.save(oldIssue);
         return "redirect:/issues";
     }
-
-//    @PostMapping("/issues/{issueId}")
-//    public String addComment(@PathVariable("issueId") Long id, @ModelAttribute Comment comment) {
-//        Issue oldIssue = issueService.findById(id);
-//        comment.setIssue(oldIssue);
-//        commentService.save(comment);
-//        return "redirect:/issues";
-//    }
-//    @GetMapping("/new_comment/{issueId}")
-//    public String getCommentForm(@PathVariable("issueId") Long issueId, Model model) {
-//        Issue issue = this.issueService.findById(issueId);
-//        model.addAttribute("issue", issue);
-//        model.addAttribute("comment", new Comment());
-//        return "add_comment";
-//    }
-//
-//    @PostMapping("/new_comment/{issueId}")
-//    public String addComment(@PathVariable("issueId") Long issueId, Comment comment) {
-//        Issue issue = this.issueService.findById(issueId);
-//        comment.setIssue();
-//        Issue issue = issueService.findById(issueId);
-//        List<Comment> comments = issue.getComments();
-//        comments.add(comment);
-//        issue.setComments(comments);
-//        issueService.save(issue);
-//        return "redirect:/issues";
-//    }
-
-
 
 }
